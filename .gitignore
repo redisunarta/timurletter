@@ -1,0 +1,30 @@
+# --- confidential / personal data — never commit ---
+*.csv
+*.xlsx
+*.xls
+*.pptx
+*.docx
+*.rtf
+QRIS/
+Engagement/
+allo-kantor/
+Data Raw/
+Data Classified/
+data final/
+data_exports/
+
+# --- scratch / working files (never deploy) ---
+assets/_*
+assets/tableau/
+
+# --- OS / editor ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# --- build / deps ---
+node_modules/
+dist/
+.cache/
+*.log

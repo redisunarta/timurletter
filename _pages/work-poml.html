@@ -1,0 +1,35 @@
+  <div class="wrap">
+
+    <div class="page-head page-head--case">
+      <a class="back-link" href="work.html">&larr; Work</a>
+      <div class="case-meta">Tokopedia &middot; ML measurement &middot; 2021&ndash;2023</div>
+      <h1>Measured what an ML coupon engine actually saved</h1>
+      <p class="lede">Tokopedia&rsquo;s coupon-targeting engine reported the conversion of the buyers it targeted. That number was being read as the engine&rsquo;s contribution. It is not the same thing.</p>
+    </div>
+
+    <article class="case-detail">
+      <div class="field">
+        <div class="field-label">Context</div>
+        <p>Tokopedia&rsquo;s Promo Optimization with Machine Learning engine — POML — decided which buyers received which coupons. It was reported on by the conversion rate of the buyers it selected, and that rate was healthy.</p>
+        <p>But an engine that targets well will select buyers who were more likely to convert in the first place. That is the entire point of targeting. It also means the engine&rsquo;s own success metric is contaminated by the thing that makes it good: the better it selects, the more credit it takes for conversion it did not cause.</p>
+      </div>
+      <div class="field">
+        <div class="field-label">My role</div>
+        <p>I ran the post-distribution analysis — the measurement layer the engine could not provide about itself. I did not build the targeting model.</p>
+      </div>
+      <div class="field">
+        <div class="field-label">Method</div>
+        <p>Compare targeted buyers against comparable untargeted ones, and treat the difference as the engine&rsquo;s real contribution rather than treating targeted conversion as the contribution.</p>
+        <p>The comparison has to survive the objection that the two groups were never alike to begin with. Targeting is deliberately non-random, so the untargeted group is not a control group in any useful sense until you make it one.</p>
+      </div>
+      <div class="field">
+        <div class="field-label">Outcome</div>
+        <p>Validated savings of <strong>$XX million a year</strong> — and, more durably, a measurement standard applied to every later iteration of the engine. Subsequent versions had to beat a counterfactual, not just report their own conversion.</p>
+      </div>
+    </article>
+
+    <section>
+      <p class="small muted">Commercial figures are masked as <strong>XX</strong>. Methods and relative changes are as they happened. &middot; <a href="work.html">All projects</a></p>
+    </section>
+
+  </div>

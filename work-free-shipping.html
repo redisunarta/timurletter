@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Terminating a free-shipping subsidy — Redi Sunarta</title>
+<meta name="description" content="Synthetic control applied to a weight-based free-shipping program in Surabaya and Makassar, and the case for terminating it.">
+<link rel="canonical" href="https://timurletter.com/work-free-shipping.html">
+
+<meta property="og:site_name" content="Redi Sunarta">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://timurletter.com/work-free-shipping.html">
+<meta property="og:title" content="Killed a free-shipping subsidy in two cities">
+<meta property="og:description" content="Synthetic control built a counterfactual Surabaya and Makassar. The subsidy was not buying the volume it was credited with.">
+<meta property="og:image" content="https://timurletter.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Killed a free-shipping subsidy in two cities">
+<meta name="twitter:description" content="Synthetic control built a counterfactual Surabaya and Makassar. The subsidy was not buying the volume it was credited with.">
+<meta name="twitter:image" content="https://timurletter.com/assets/og.png">
+
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;550;600;650;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;550;600;650;700&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<svg class="sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="i-mail" viewBox="0 0 24 24">
+    <rect x="2.5" y="4.5" width="19" height="15" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/>
+    <path d="M3 6.5l9 6.5 9-6.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="i-x" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+  </symbol>
+  <symbol id="i-linkedin" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05a3.74 3.74 0 0 1 3.37-1.85c3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/>
+  </symbol>
+  <symbol id="i-github" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M12 .3a12 12 0 0 0-3.79 23.4c.6.11.82-.26.82-.58v-2.23c-3.34.72-4.04-1.42-4.04-1.42-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.84 2.81 1.31 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 12 .3z"/>
+  </symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24">
+    <path d="M3.5 20.5h17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+    <rect x="5" y="11" width="3.6" height="6" rx=".6" fill="currentColor"/>
+    <rect x="10.2" y="6.5" width="3.6" height="10.5" rx=".6" fill="currentColor"/>
+    <rect x="15.4" y="9" width="3.6" height="8" rx=".6" fill="currentColor"/>
+  </symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24">
+    <path d="M14 3.5H7a1.5 1.5 0 0 0-1.5 1.5v14A1.5 1.5 0 0 0 7 20.5h10a1.5 1.5 0 0 0 1.5-1.5V8z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+    <path d="M14 3.5V8h4.5M8.8 12.5h6.4M8.8 16h6.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24">
+    <path d="M12 21.5s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+    <circle cx="12" cy="10.2" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+  </symbol>
+</svg>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="index.html">Redi&nbsp;Sunarta</a>
+    <nav class="nav" aria-label="Primary">
+      <a href="work.html" aria-current="page">Work</a>
+      <a href="viz.html">Viz</a>
+      <a href="writing.html">Writing</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap">
+
+    <div class="page-head page-head--case">
+      <a class="back-link" href="work.html">&larr; Work</a>
+      <div class="case-meta">Tokopedia &middot; Causal inference &middot; 2021&ndash;2023</div>
+      <h1>Killed a free-shipping subsidy in two cities</h1>
+      <p class="lede">A weight-based free-shipping program was credited with all the volume that flowed through it. Synthetic control asked what would have flowed anyway.</p>
+    </div>
+
+    <article class="case-detail">
+      <div class="field">
+        <div class="field-label">Context</div>
+        <p>Tokopedia ran a weight-based free-shipping program in Surabaya and Makassar. Its reported performance was the volume of orders that used it — which is how most subsidies justify themselves, and why most subsidies survive longer than they should.</p>
+        <p>The question nobody could answer was how many of those orders needed the subsidy. A buyer who would have ordered at full shipping cost and instead ordered free is not incremental volume. They are a discount.</p>
+      </div>
+      <div class="field">
+        <div class="field-label">My role</div>
+        <p>Ran the analysis end to end and carried the recommendation — terminate — through to the decision. Recommending the end of a live program is a different task from measuring one, and most of the work was in the second half.</p>
+      </div>
+      <div class="field">
+        <div class="field-label">Method</div>
+        <p>Synthetic control. There is no parallel Surabaya running without the program, so you build one: take cities that never received it, and weight them into a composite that tracks the real city closely in the period <em>before</em> launch.</p>
+        <p>If the composite tracks well beforehand, its path afterwards is a defensible estimate of what would have happened anyway. The gap between the real city and its synthetic twin after launch is the subsidy&rsquo;s actual contribution.</p>
+      </div>
+      <div class="field">
+        <div class="field-label">What made it hard</div>
+        <p>Turning off a subsidy always looks like a loss in the first weekly report. The analysis had to be strong enough to survive that, and stated clearly enough that people remembered what it predicted.</p>
+      </div>
+      <div class="field">
+        <div class="field-label">Evidence</div>
+        <p>The gap between each city and its synthetic twin did not justify the spend.</p>
+      </div>
+      <div class="field">
+        <div class="field-label">The strongest objection</div>
+        <p>A good pre-period fit does not guarantee the composite stays valid afterwards. Something specific to Surabaya and Makassar — a competitor&rsquo;s push, a local shock — would show up as a gap and be misread as subsidy effect. The estimate is only as good as the assumption that nothing else changed in those two cities and not in the donor pool.</p>
+      </div>
+      <div class="field">
+        <div class="field-label">Outcome</div>
+        <p>The program was terminated in both cities, freeing <strong>$XX million</strong> in annual subsidy.</p>
+      </div>
+    </article>
+
+    <section>
+      <p class="small muted">Commercial figures are masked as <strong>XX</strong>. Methods and relative changes are as they happened. &middot; <a href="work.html">All projects</a></p>
+    </section>
+
+  </div>
+
+  <div class="wrap">
+    <a class="next-nav" href="work-loyalty.html">
+      <span class="next-label">Next</span>
+      <span class="next-title">Cut a retention program's cost</span>
+      <span class="next-blurb">Behavioural segmentation on a discount program leaking in two directions.</span>
+    </a>
+  </div>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-id">
+        <p class="foot-name">Redi Sunarta</p>
+        <p class="small muted">Analytics for consumer tech.<br>Jakarta, Indonesia.</p>
+        <ul class="social">
+          <li><a href="mailto:redi.sunarta@gmail.com" aria-label="Email Redi Sunarta"><svg class="ico" aria-hidden="true"><use href="#i-mail"></use></svg></a></li>
+          <li><a href="https://www.linkedin.com/in/redisunarta" rel="me noopener" aria-label="Redi Sunarta on LinkedIn"><svg class="ico" aria-hidden="true"><use href="#i-linkedin"></use></svg></a></li>
+          <li><a href="https://x.com/redi_sunarta" rel="me noopener" aria-label="Redi Sunarta on X"><svg class="ico" aria-hidden="true"><use href="#i-x"></use></svg></a></li>
+          <li><a href="https://github.com/redisunarta" rel="me noopener" aria-label="Redi Sunarta on GitHub"><svg class="ico" aria-hidden="true"><use href="#i-github"></use></svg></a></li>
+          <li><a href="https://public.tableau.com/app/profile/redi.sunarta" rel="me noopener" aria-label="Redi Sunarta on Tableau Public"><svg class="ico" aria-hidden="true"><use href="#i-chart"></use></svg></a></li>
+        </ul>
+      </div>
+      <nav class="foot-col" aria-label="Site">
+        <p class="foot-col-h">Site</p>
+        <a href="index.html">Home</a>
+        <a href="work.html">Work</a>
+        <a href="viz.html">Viz</a>
+        <a href="writing.html">Writing</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+    <p class="foot-legal small muted">&copy; 2026 Redi Sunarta. Commercial figures from employer projects are masked.</p>
+  </div>
+</footer>
+
+<script>
+/* Highlights the section currently being read in the outline.
+   Progressive enhancement: without this the outline is still a working list
+   of anchor links. Marks the last heading scrolled past, so the highlight
+   reflects the section you are inside rather than the next one coming up. */
+(function () {
+  var toc = document.querySelector('.toc');
+  if (!toc) return;
+  var links = [].slice.call(toc.querySelectorAll('a'));
+  var targets = links.map(function (a) {
+    return document.getElementById(decodeURIComponent(a.hash.slice(1)));
+  });
+  if (!targets.length || targets.indexOf(null) > -1) return;
+
+  var ticking = false;
+  function update() {
+    ticking = false;
+    var i = 0;
+    for (var n = 0; n < targets.length; n++) {
+      if (targets[n].getBoundingClientRect().top <= 120) i = n;
+    }
+    /* at the very bottom, always show the last section as current */
+    if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 2) {
+      i = targets.length - 1;
+    }
+    links.forEach(function (a, n) {
+      if (n === i) { a.setAttribute('aria-current', 'true'); }
+      else { a.removeAttribute('aria-current'); }
+    });
+  }
+  function onScroll() {
+    if (!ticking) { ticking = true; requestAnimationFrame(update); }
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll, { passive: true });
+  update();
+})();
+</script>
+
+</body>
+</html>

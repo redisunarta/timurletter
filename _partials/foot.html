@@ -1,0 +1,70 @@
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-id">
+        <p class="foot-name">Redi Sunarta</p>
+        <p class="small muted">Analytics for consumer tech.<br>Jakarta, Indonesia.</p>
+        <ul class="social">
+          <li><a href="mailto:redi.sunarta@gmail.com" aria-label="Email Redi Sunarta"><svg class="ico" aria-hidden="true"><use href="#i-mail"></use></svg></a></li>
+          <li><a href="https://www.linkedin.com/in/redisunarta" rel="me noopener" aria-label="Redi Sunarta on LinkedIn"><svg class="ico" aria-hidden="true"><use href="#i-linkedin"></use></svg></a></li>
+          <li><a href="https://x.com/redi_sunarta" rel="me noopener" aria-label="Redi Sunarta on X"><svg class="ico" aria-hidden="true"><use href="#i-x"></use></svg></a></li>
+          <li><a href="https://github.com/redisunarta" rel="me noopener" aria-label="Redi Sunarta on GitHub"><svg class="ico" aria-hidden="true"><use href="#i-github"></use></svg></a></li>
+          <li><a href="https://public.tableau.com/app/profile/redi.sunarta" rel="me noopener" aria-label="Redi Sunarta on Tableau Public"><svg class="ico" aria-hidden="true"><use href="#i-chart"></use></svg></a></li>
+        </ul>
+      </div>
+      <nav class="foot-col" aria-label="Site">
+        <p class="foot-col-h">Site</p>
+        <a href="index.html">Home</a>
+        <a href="work.html">Work</a>
+        <a href="viz.html">Viz</a>
+        <a href="writing.html">Writing</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+    <p class="foot-legal small muted">&copy; {{YEAR}} Redi Sunarta. Commercial figures from employer projects are masked.</p>
+  </div>
+</footer>
+
+<script>
+/* Highlights the section currently being read in the outline.
+   Progressive enhancement: without this the outline is still a working list
+   of anchor links. Marks the last heading scrolled past, so the highlight
+   reflects the section you are inside rather than the next one coming up. */
+(function () {
+  var toc = document.querySelector('.toc');
+  if (!toc) return;
+  var links = [].slice.call(toc.querySelectorAll('a'));
+  var targets = links.map(function (a) {
+    return document.getElementById(decodeURIComponent(a.hash.slice(1)));
+  });
+  if (!targets.length || targets.indexOf(null) > -1) return;
+
+  var ticking = false;
+  function update() {
+    ticking = false;
+    var i = 0;
+    for (var n = 0; n < targets.length; n++) {
+      if (targets[n].getBoundingClientRect().top <= 120) i = n;
+    }
+    /* at the very bottom, always show the last section as current */
+    if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 2) {
+      i = targets.length - 1;
+    }
+    links.forEach(function (a, n) {
+      if (n === i) { a.setAttribute('aria-current', 'true'); }
+      else { a.removeAttribute('aria-current'); }
+    });
+  }
+  function onScroll() {
+    if (!ticking) { ticking = true; requestAnimationFrame(update); }
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll, { passive: true });
+  update();
+})();
+</script>
+
+</body>
+</html>
