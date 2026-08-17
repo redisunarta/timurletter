@@ -177,6 +177,50 @@ for pdf_path in glob.glob("resume/*.pdf"):
                       f"— the site masks these as XX. Publishing the raw PDF "
                       f"undoes that decision.")
 
+# The OG card is a baked PNG, not rendered from the page, so editing the site
+# copy does NOT update it. It shipped once showing the old domain and the old
+# tagline for exactly this reason. Two guards:
+#   1. the copy constants in make-og.py must still match the live site
+#   2. the PNG must be newer than the sources that describe it
+OG = "assets/og.png"
+if not os.path.exists(OG):
+    errors.append(f"{OG} missing — run python3 tools/make-og.py")
+elif os.path.exists("tools/make-og.py"):
+    gen = open("tools/make-og.py", encoding='utf-8').read()
+
+    def const(name):
+        m = re.search(rf'^{name}\s*=\s*(.+?)(?:\s*#.*)?$', gen, re.M)
+        if not m:
+            return None
+        try:
+            return eval(m.group(1), {}, {})
+        except Exception:
+            return None
+
+    build_src = open("build.py", encoding='utf-8').read()
+    m = re.search(r'^DOMAIN\s*=\s*["\']([^"\']+)', build_src, re.M)
+    site_domain = re.sub(r'^https?://', '', m.group(1)).rstrip('/') if m else None
+    og_domain = const("DOMAIN")
+    if site_domain and og_domain and og_domain != site_domain:
+        errors.append(f"OG card shows domain '{og_domain}' but the site is "
+                      f"'{site_domain}' — rerun tools/make-og.py")
+
+    tagline = const("TAGLINE")
+    if tagline and os.path.exists("index.html"):
+        home = open("index.html", encoding='utf-8').read()
+        m = re.search(r'<meta property="og:title" content="([^"]*)"', home)
+        if m and tagline.lower() not in m.group(1).lower():
+            warnings.append(f"OG card tagline '{tagline}' does not appear in the "
+                            f"home og:title '{m.group(1)}' — is the card stale?")
+
+    newest = max((os.path.getmtime(f) for f in
+                  ("_pages/index.html", "_partials/head.html",
+                   "build.py", "tools/make-og.py")
+                  if os.path.exists(f)), default=0)
+    if os.path.getmtime(OG) < newest - 1:
+        warnings.append(f"{OG} is older than the page sources — the card may "
+                        f"show outdated copy. Rerun tools/make-og.py")
+
 # deploy plumbing
 if not os.path.exists("CNAME"):
     warnings.append("no CNAME file — custom domain will not work on GitHub Pages")
